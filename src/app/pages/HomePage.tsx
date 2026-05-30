@@ -82,8 +82,8 @@ export default function HomePage() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Catégories uniques par slug EN
-  const categories = [...new Set(projects.map(p => p.category))];
+  const visibleCategories = ["Typography", "Editorial Design", "Graphic Design", "Photography"];
+  const categories = [...new Set(projects.map(p => p.category))].filter(c => visibleCategories.includes(c));
 
   const filtered = activeCategory
     ? projects.filter(p => p.category === activeCategory)
