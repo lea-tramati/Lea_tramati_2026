@@ -45,8 +45,9 @@ export default function ProjectPage() {
 
   if (!project) return <Navigate to="/" replace />;
 
+  const title       = lang === "fr" ? project.titleFr       : project.title;
   const description = lang === "fr" ? project.descriptionFr : project.description;
-  const category = lang === "fr" ? project.categoryFr : project.category;
+  const category    = lang === "fr" ? project.categoryFr    : project.category;
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -60,7 +61,7 @@ export default function ProjectPage() {
               {project.eyebrow}
             </span>
             <h1 className="font-['Bebas_Neue'] text-[clamp(3.5rem,8vw,9rem)] leading-[0.88] text-white whitespace-pre-line">
-              {project.title}
+              {title}
             </h1>
           </motion.div>
         </div>
@@ -70,7 +71,7 @@ export default function ProjectPage() {
       <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="w-full">
         <img
           src={`${base}${project.heroImage ?? project.cover}`}
-          alt={project.title.replace("\n", " ")}
+          alt={title.replace("\n", " ")}
           className="w-full max-h-[80vh] object-cover"
         />
       </motion.section>
@@ -113,7 +114,7 @@ export default function ProjectPage() {
                   {t.prev}
                 </span>
                 <span className="font-['Bebas_Neue'] text-2xl text-white group-hover:text-gray-400 transition-colors">
-                  ← {project.prev.name}
+                  ← {lang === "fr" ? project.prev.nameFr : project.prev.name}
                 </span>
               </Link>
             ) : (
@@ -134,7 +135,7 @@ export default function ProjectPage() {
                   {t.next}
                 </span>
                 <span className="font-['Bebas_Neue'] text-2xl text-white group-hover:text-gray-400 transition-colors">
-                  {project.next.name} →
+                  {lang === "fr" ? project.next.nameFr : project.next.name} →
                 </span>
               </Link>
             ) : (

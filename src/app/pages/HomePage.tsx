@@ -193,7 +193,7 @@ export default function HomePage() {
                       {String(project.id).padStart(2, "0")}.
                     </div>
                     <h3 className="font-['Bebas_Neue'] text-2xl leading-tight mb-1 text-white">
-                      {project.title.replace("\n", " ")}
+                      {(lang === "fr" ? project.titleFr : project.title).replace("\n", " ")}
                     </h3>
                     <p className="font-['Inter'] text-[10px] tracking-wider text-white/40 uppercase">
                       {lang === "fr" ? project.categoryFr : project.category}

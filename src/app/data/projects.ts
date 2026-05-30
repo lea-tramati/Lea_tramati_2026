@@ -8,6 +8,7 @@ export interface Project {
   id: number;
   slug: string;
   title: string;
+  titleFr: string;
   eyebrow: string;
   category: string;
   categoryFr: string;
@@ -16,8 +17,8 @@ export interface Project {
   description: string;
   descriptionFr: string;
   images: ProjectImage[];
-  prev: { slug: string; name: string } | null;
-  next: { slug: string; name: string } | null;
+  prev: { slug: string; name: string; nameFr: string } | null;
+  next: { slug: string; name: string; nameFr: string } | null;
 }
 
 export const projects: Project[] = [
@@ -25,6 +26,7 @@ export const projects: Project[] = [
     id: 1,
     slug: 'zaha-hadid',
     title: 'Zaha Hadid,\nthe Box',
+    titleFr: 'Zaha Hadid,\nla Boîte',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Creative Direction',
     categoryFr: 'Direction créative',
@@ -40,12 +42,13 @@ export const projects: Project[] = [
       { type: 'full', srcs: ['img/024.jpg'], alts: ['Final presentation'] },
     ],
     prev: null,
-    next: { slug: 'baskerville', name: 'Baskerville, the specimen' },
+    next: { slug: 'baskerville', name: 'Baskerville, the Specimen', nameFr: 'Baskerville, le Spécimen' },
   },
   {
     id: 2,
     slug: 'baskerville',
     title: 'Baskerville,\nthe Specimen',
+    titleFr: 'Baskerville,\nle Spécimen',
     eyebrow: 'ESAD Amiens — 2024',
     category: 'Typography',
     categoryFr: 'Typographie',
@@ -58,13 +61,14 @@ export const projects: Project[] = [
       { type: 'grid2', srcs: ['img/025.jpg', 'img/026.jpg'], alts: ['Baskerville specimen detail view', 'Typography compositions'] },
       { type: 'grid2', srcs: ['img/027.jpg', 'img/028.jpg'], alts: ['Specimen details', 'Poster overview'] },
     ],
-    prev: { slug: 'zaha-hadid', name: 'Zaha Hadid, the box' },
-    next: { slug: 'haute-couture', name: 'Haute Couture' },
+    prev: { slug: 'zaha-hadid', name: 'Zaha Hadid, the Box', nameFr: 'Zaha Hadid, la Boîte' },
+    next: { slug: 'haute-couture', name: 'Haute Couture', nameFr: 'Haute Couture' },
   },
   {
     id: 3,
     slug: 'haute-couture',
     title: 'Haute Couture',
+    titleFr: 'Haute Couture',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Editorial Design',
     categoryFr: 'Design éditorial',
@@ -77,13 +81,14 @@ export const projects: Project[] = [
       { type: 'grid2', srcs: ['img/016.jpg', 'img/017.jpg'], alts: ['Book detail', 'Book contents view'] },
       { type: 'full', srcs: ['img/018.jpg'], alts: ['Book overview'] },
     ],
-    prev: { slug: 'baskerville', name: 'Baskerville, the specimen' },
-    next: { slug: 'slash', name: 'Slash' },
+    prev: { slug: 'baskerville', name: 'Baskerville, the Specimen', nameFr: 'Baskerville, le Spécimen' },
+    next: { slug: 'slash', name: 'Slash', nameFr: 'Slash' },
   },
   {
     id: 4,
     slug: 'slash',
     title: 'Slash',
+    titleFr: 'Slash',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Graphic Design',
     categoryFr: 'Design graphique',
@@ -93,13 +98,14 @@ export const projects: Project[] = [
     descriptionFr:
       "Cette affiche expérimentale est le fruit d'un atelier de sérigraphie inspiré de l'icône Chappell Roan. En groupe, nous avons cherché à expérimenter une typographie en résonance avec l'image de la chanteuse, représentée en Jeanne d'Arc, en jouant notamment avec des lettres gothiques associées au Moyen Âge.",
     images: [],
-    prev: { slug: 'haute-couture', name: 'Haute Couture' },
-    next: { slug: 'vinyls', name: 'Vinyls' },
+    prev: { slug: 'haute-couture', name: 'Haute Couture', nameFr: 'Haute Couture' },
+    next: { slug: 'vinyls', name: 'Vinyls', nameFr: 'Vinyles' },
   },
   {
     id: 5,
     slug: 'vinyls',
     title: 'Vinyls',
+    titleFr: 'Vinyles',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Art Direction',
     categoryFr: 'Direction artistique',
@@ -115,13 +121,14 @@ export const projects: Project[] = [
         alts: ['Vinyl 1', 'Vinyl 2', 'Vinyl 3', 'Vinyl 4', 'Vinyl 5', 'Vinyl 6'],
       },
     ],
-    prev: { slug: 'slash', name: 'Slash' },
-    next: { slug: 'metamorphosis', name: 'Metamorphosis' },
+    prev: { slug: 'slash', name: 'Slash', nameFr: 'Slash' },
+    next: { slug: 'metamorphosis', name: 'Metamorphosis', nameFr: 'Métamorphose' },
   },
   {
     id: 6,
     slug: 'metamorphosis',
     title: 'Metamorphosis',
+    titleFr: 'Métamorphose',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Illustration',
     categoryFr: 'Illustration',
@@ -131,13 +138,14 @@ export const projects: Project[] = [
     descriptionFr:
       "Pour ce projet, j'ai exploré la création de formes à travers un collage-photomontage réalisé à partir de magazines de mode pour former un diorama. L'intention était de créer une composition à la fois organique et hybride, où les éléments se mélangent et se transforment.",
     images: [],
-    prev: { slug: 'vinyls', name: 'Vinyls' },
-    next: { slug: 'portofino', name: 'Portofino' },
+    prev: { slug: 'vinyls', name: 'Vinyls', nameFr: 'Vinyles' },
+    next: { slug: 'portofino', name: 'Portofino', nameFr: 'Portofino' },
   },
   {
     id: 7,
     slug: 'portofino',
     title: 'Portofino',
+    titleFr: 'Portofino',
     eyebrow: 'Prépa — 2025',
     category: 'Brand Design',
     categoryFr: 'Design de marque',
@@ -150,13 +158,14 @@ export const projects: Project[] = [
       { type: 'full', srcs: ['img/033.jpg'], alts: ['Portofino detail view'] },
       { type: 'grid2', srcs: ['img/040.jpg', 'img/031.jpg'], alts: ['Portofino typography', 'Portofino letter detail'] },
     ],
-    prev: { slug: 'metamorphosis', name: 'Metamorphosis' },
-    next: { slug: 'portofino-font', name: 'Portofino, font' },
+    prev: { slug: 'metamorphosis', name: 'Metamorphosis', nameFr: 'Métamorphose' },
+    next: { slug: 'portofino-font', name: 'Portofino, Font', nameFr: 'Portofino, Police' },
   },
   {
     id: 8,
     slug: 'portofino-font',
     title: 'Portofino,\nFont',
+    titleFr: 'Portofino,\nPolice',
     eyebrow: 'Prépa — 2025',
     category: 'Typography',
     categoryFr: 'Typographie',
@@ -168,13 +177,14 @@ export const projects: Project[] = [
     images: [
       { type: 'full', srcs: ['img/002.jpg'], alts: ['Portofino font specimen'] },
     ],
-    prev: { slug: 'portofino', name: 'Portofino' },
-    next: { slug: 'slay', name: 'Slay' },
+    prev: { slug: 'portofino', name: 'Portofino', nameFr: 'Portofino' },
+    next: { slug: 'slay', name: 'Slay', nameFr: 'Slay' },
   },
   {
     id: 9,
     slug: 'slay',
     title: 'Slay',
+    titleFr: 'Slay',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Editorial Design',
     categoryFr: 'Design éditorial',
@@ -186,13 +196,14 @@ export const projects: Project[] = [
     images: [
       { type: 'grid3', srcs: ['img/042.jpg', 'img/043.jpg', 'img/047.jpg'], alts: ['Slay visual 1', 'Slay visual 2', 'Slay visual 3'] },
     ],
-    prev: { slug: 'portofino-font', name: 'Portofino, font' },
-    next: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA' },
+    prev: { slug: 'portofino-font', name: 'Portofino, Font', nameFr: 'Portofino, Police' },
+    next: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA', nameFr: 'IA vs Non IA' },
   },
   {
     id: 10,
     slug: 'ia-vs-non-ia',
     title: 'IA vs Non IA',
+    titleFr: 'IA vs Non IA',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Research',
     categoryFr: 'Recherche',
@@ -206,13 +217,14 @@ export const projects: Project[] = [
       { type: 'grid2', srcs: ['img/012.jpg', 'img/014.jpg'], alts: ['IA vs Non IA image 2', 'IA vs Non IA image 3'] },
       { type: 'grid3', srcs: ['img/013.jpg', 'img/036.jpg', 'img/037.jpg'], alts: ['IA image 4', 'IA image 5', 'IA image 6'] },
     ],
-    prev: { slug: 'slay', name: 'Slay' },
-    next: { slug: 'the-stranger', name: 'The Stranger' },
+    prev: { slug: 'slay', name: 'Slay', nameFr: 'Slay' },
+    next: { slug: 'the-stranger', name: 'The Stranger', nameFr: "L'Étranger" },
   },
   {
     id: 11,
     slug: 'the-stranger',
     title: 'The Stranger',
+    titleFr: "L'Étranger",
     eyebrow: 'Prépa — 2025',
     category: 'Print Design',
     categoryFr: 'Design print',
@@ -222,13 +234,14 @@ export const projects: Project[] = [
     descriptionFr:
       "Je souhaitais pour ce projet imaginer et représenter trois affiches inspirées de L'Étranger d'Albert Camus.",
     images: [],
-    prev: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA' },
-    next: { slug: 'the-passers-by', name: 'The Passers-by' },
+    prev: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA', nameFr: 'IA vs Non IA' },
+    next: { slug: 'the-passers-by', name: 'The Passers-by', nameFr: 'Les Passants' },
   },
   {
     id: 12,
     slug: 'the-passers-by',
     title: 'The Passers-by',
+    titleFr: 'Les Passants',
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Photography',
     categoryFr: 'Photographie',
@@ -241,7 +254,7 @@ export const projects: Project[] = [
       { type: 'grid2', srcs: ['img/052.jpg', 'img/053.jpg'], alts: ['Passers-by visual 2', 'Passers-by visual 3'] },
       { type: 'full', srcs: ['img/054.jpg'], alts: ['Passers-by visual 4'] },
     ],
-    prev: { slug: 'the-stranger', name: 'The Stranger' },
+    prev: { slug: 'the-stranger', name: 'The Stranger', nameFr: "L'Étranger" },
     next: null,
   },
 ];
