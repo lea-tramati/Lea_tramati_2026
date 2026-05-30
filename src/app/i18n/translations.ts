@@ -58,7 +58,7 @@ export const translations = {
         { year: "2024", title: "Graphic Design", institution: "ESAD Amiens" },
         { year: "2023", title: "Artistic Preparation", institution: "Prép'art" },
         { year: "2023", title: "General Baccalaureate", institution: "High School" },
-        { year: "2020", title: "Diplôme National du Brevet", institution: "Middle School" },
+        { year: "2020", title: "Middle School Certificate", institution: "Middle School" },
       ],
       softwareList: ["Photoshop", "Illustrator", "InDesign", "Premiere Pro", "After Effects", "HTML & CSS"],
       languageList: [
