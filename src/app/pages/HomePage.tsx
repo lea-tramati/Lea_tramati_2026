@@ -133,12 +133,12 @@ export default function HomePage() {
             transition={{ delay: 0.9 }}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
           >
-            <a
-              href="#work"
+            <button
+              onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
               className="px-8 py-3 bg-white text-black font-['Inter'] text-xs tracking-[0.15em] hover:bg-gray-200 transition-colors inline-block"
             >
               {t.hero.cta}
-            </a>
+            </button>
           </motion.div>
         </div>
 
