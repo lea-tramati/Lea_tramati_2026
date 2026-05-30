@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { projects } from "../data/projects";
 import { useLang } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const base = import.meta.env.BASE_URL;
 
@@ -69,30 +70,37 @@ function FloatingImage({
 }
 
 export default function HomePage() {
+  usePageTitle();
   const navigate = useNavigate();
   const { lang } = useLang();
   const t = translations[lang];
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight / 2;
-      for (const id of ["hero", "work"]) {
-        const el = document.getElementById(id);
-        if (el && scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
-          setActiveSection(id);
-          break;
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.scrollTo(0, 0);
   }, []);
 
+  // Catégories uniques par slug EN
+  const categories = [...new Set(projects.map(p => p.category))];
+
+  const filtered = activeCategory
+    ? projects.filter(p => p.category === activeCategory)
+    : projects;
+
+  const getCategoryLabel = (cat: string) => {
+    const p = projects.find(pr => pr.category === cat);
+    return lang === "fr" ? (p?.categoryFr ?? cat) : cat;
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-black text-white overflow-x-hidden"
+    >
       <Nav />
 
       {/* Hero */}
@@ -134,7 +142,7 @@ export default function HomePage() {
             className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
           >
             <button
-              onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
               className="px-8 py-3 bg-white text-black font-['Inter'] text-xs tracking-[0.15em] hover:bg-gray-200 transition-colors inline-block"
             >
               {t.hero.cta}
@@ -147,16 +155,48 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* About */}
+      <section id="about" className="border-t border-white/10 py-20 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-['Inter'] text-[9px] tracking-[0.36em] uppercase text-white/40 block mb-4">
+              {t.home.aboutLabel}
+            </span>
+            <h2 className="font-['Bebas_Neue'] text-5xl text-white leading-[0.9]">
+              Léa<br />Tramati
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="md:col-span-2"
+          >
+            <p className="font-['Inter'] text-sm text-gray-300 leading-relaxed mb-6 max-w-2xl">
+              {t.home.aboutText}
+            </p>
+            <span className="font-['Inter'] text-[9px] tracking-[0.28em] uppercase text-white/40">
+              {t.home.aboutLocation}
+            </span>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Work grid */}
-      <section id="work" className="min-h-screen py-20 bg-black border-t border-white/10">
+      <section id="work" className="py-20 bg-black border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-12"
           >
-            <div className="flex justify-between items-baseline border-b border-white/10 pb-5 mb-10">
+            <div className="flex justify-between items-baseline border-b border-white/10 pb-5 mb-8">
               <div>
                 <div className="font-['Inter'] text-[9px] tracking-[0.36em] uppercase text-white/40 mb-4">
                   {t.home.sectionLabel}
@@ -165,48 +205,81 @@ export default function HomePage() {
                   {t.home.sectionTitle}
                 </h2>
               </div>
-              <span className="font-['Inter'] text-[9px] tracking-[0.34em] text-white/40">12</span>
+              <span className="font-['Inter'] text-[9px] tracking-[0.34em] text-white/40">
+                {filtered.length}
+              </span>
+            </div>
+
+            {/* Filtre catégories */}
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveCategory(null)}
+                className={`font-['Inter'] text-[10px] tracking-[0.20em] uppercase px-4 py-1.5 border transition-colors ${
+                  activeCategory === null
+                    ? "border-white text-black bg-white"
+                    : "border-white/20 text-white/50 hover:border-white/50 hover:text-white"
+                }`}
+              >
+                {t.home.filterAll}
+              </button>
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
+                  className={`font-['Inter'] text-[10px] tracking-[0.20em] uppercase px-4 py-1.5 border transition-colors ${
+                    activeCategory === cat
+                      ? "border-white text-black bg-white"
+                      : "border-white/20 text-white/50 hover:border-white/50 hover:text-white"
+                  }`}
+                >
+                  {getCategoryLabel(cat)}
+                </button>
+              ))}
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <Link to={`/project/${project.slug}`} className="group block">
-                  <div className="relative overflow-hidden aspect-[4/5] bg-white/5 mb-4 border border-white/10">
-                    <motion.img
-                      src={`${base}${project.cover}`}
-                      alt={project.title.replace("\n", " ")}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.06, filter: "invert(1)" }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </div>
-                  <div>
-                    <div className="font-['Inter'] text-[9px] tracking-[0.32em] text-white/40 mb-1">
-                      {String(project.id).padStart(2, "0")}.
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence mode="popLayout">
+              {filtered.map((project) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Link to={`/project/${project.slug}`} className="group block">
+                    <div className="relative overflow-hidden aspect-[4/5] bg-white/5 mb-4 border border-white/10">
+                      <motion.img
+                        src={`${base}${project.cover}`}
+                        alt={(lang === "fr" ? project.titleFr : project.title).replace("\n", " ")}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        whileHover={{ scale: 1.06, filter: "invert(1)" }}
+                        transition={{ duration: 0.5 }}
+                      />
                     </div>
-                    <h3 className="font-['Bebas_Neue'] text-2xl leading-tight mb-1 text-white">
-                      {(lang === "fr" ? project.titleFr : project.title).replace("\n", " ")}
-                    </h3>
-                    <p className="font-['Inter'] text-[10px] tracking-wider text-white/40 uppercase">
-                      {lang === "fr" ? project.categoryFr : project.category}
-                    </p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                    <div>
+                      <div className="font-['Inter'] text-[9px] tracking-[0.32em] text-white/40 mb-1">
+                        {String(project.id).padStart(2, "0")}.
+                      </div>
+                      <h3 className="font-['Bebas_Neue'] text-2xl leading-tight mb-1 text-white">
+                        {(lang === "fr" ? project.titleFr : project.title).replace("\n", " ")}
+                      </h3>
+                      <p className="font-['Inter'] text-[10px] tracking-wider text-white/40 uppercase">
+                        {lang === "fr" ? project.categoryFr : project.category}
+                      </p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }

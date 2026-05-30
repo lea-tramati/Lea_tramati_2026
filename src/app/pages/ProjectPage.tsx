@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { getProject, type ProjectImage } from "../data/projects";
 import { useLang } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const base = import.meta.env.BASE_URL;
 
@@ -12,7 +13,7 @@ function ImageSection({ block }: { block: ProjectImage }) {
   if (block.type === "full") {
     return (
       <section className="mb-6">
-        <img src={`${base}${block.srcs[0]}`} alt={block.alts[0]} className="w-full object-cover" />
+        <img src={`${base}${block.srcs[0]}`} alt={block.alts[0]} className="w-full object-cover" loading="lazy" />
       </section>
     );
   }
@@ -49,8 +50,15 @@ export default function ProjectPage() {
   const description = lang === "fr" ? project.descriptionFr : project.description;
   const category    = lang === "fr" ? project.categoryFr    : project.category;
 
+  usePageTitle(title.replace("\n", " "));
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-black text-white"
+    >
       <Nav />
 
       {/* Titre */}
@@ -153,6 +161,6 @@ export default function ProjectPage() {
       </section>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }

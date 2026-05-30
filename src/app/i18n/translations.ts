@@ -14,6 +14,10 @@ export const translations = {
     home: {
       sectionLabel: "Selected Work",
       sectionTitle: "SELECTED\nPROJECTS",
+      filterAll: "All",
+      aboutLabel: "About",
+      aboutText: "Léa Tramati is a graphic design student at ESAD Amiens, exploring the intersections of typography, editorial design, and visual identity. Her work is driven by close attention to material and conceptual rigour.",
+      aboutLocation: "Based in Amiens, France",
     },
     project: {
       description: "Description.",
@@ -26,6 +30,7 @@ export const translations = {
       tagline:
         "Have a project in mind? Let's discuss how we can transform your vision into reality.",
       copyright: "© 2026 Léa Tramati",
+      downloadPdf: "↓ Download Portfolio",
     },
     cv: {
       contact: "Contact",
@@ -91,6 +96,10 @@ export const translations = {
     home: {
       sectionLabel: "Travaux sélectionnés",
       sectionTitle: "PROJETS\nSÉLECTIONNÉS",
+      filterAll: "Tous",
+      aboutLabel: "À propos",
+      aboutText: "Léa Tramati est étudiante en design graphique à l'ESAD Amiens, explorant les croisements entre typographie, design éditorial et identité visuelle. Son travail est guidé par une attention particulière à la rigueur matérielle et conceptuelle.",
+      aboutLocation: "Basée à Amiens, France",
     },
     project: {
       description: "Description.",
@@ -103,6 +112,7 @@ export const translations = {
       tagline:
         "Vous avez un projet en tête ? Discutons de comment transformer votre vision en réalité.",
       copyright: "© 2026 Léa Tramati",
+      downloadPdf: "↓ Télécharger le Portfolio",
     },
     cv: {
       contact: "Contact",

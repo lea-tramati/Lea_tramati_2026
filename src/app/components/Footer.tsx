@@ -1,6 +1,8 @@
 import { useLang } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
 
+const base = import.meta.env.BASE_URL;
+
 export default function Footer() {
   const { lang } = useLang();
   const t = translations[lang].footer;
@@ -30,7 +32,7 @@ export default function Footer() {
                 +33 6 13 75 08 95
               </a>
             </div>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-6 items-center">
               <a
                 href="https://instagram.com/ltrmti"
                 target="_blank"
@@ -46,6 +48,13 @@ export default function Footer() {
                 className="font-['Inter'] text-xs tracking-wider text-gray-500 hover:text-white transition-colors uppercase"
               >
                 LinkedIn
+              </a>
+              <a
+                href={`${base}portfolio.pdf`}
+                download
+                className="font-['Inter'] text-xs tracking-wider text-gray-500 hover:text-white transition-colors uppercase"
+              >
+                {t.downloadPdf}
               </a>
             </div>
           </div>

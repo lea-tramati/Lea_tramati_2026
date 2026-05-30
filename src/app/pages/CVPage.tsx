@@ -3,13 +3,20 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useLang } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function CVPage() {
   const { lang } = useLang();
   const t = translations[lang].cv;
+  usePageTitle("CV");
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-black text-white"
+    >
       <Nav />
 
       <main className="pt-40 pb-20 px-6">
@@ -151,6 +158,6 @@ export default function CVPage() {
       </main>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }
