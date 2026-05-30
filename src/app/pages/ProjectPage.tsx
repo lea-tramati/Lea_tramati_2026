@@ -44,13 +44,13 @@ export default function ProjectPage() {
   const { lang } = useLang();
   const t = translations[lang].project;
 
+  const title       = project ? (lang === "fr" ? project.titleFr       : project.title)       : "";
+  const description = project ? (lang === "fr" ? project.descriptionFr : project.description) : "";
+  const category    = project ? (lang === "fr" ? project.categoryFr    : project.category)    : "";
+
+  usePageTitle(title.replace("\n", " ") || undefined);
+
   if (!project) return <Navigate to="/" replace />;
-
-  const title       = lang === "fr" ? project.titleFr       : project.title;
-  const description = lang === "fr" ? project.descriptionFr : project.description;
-  const category    = lang === "fr" ? project.categoryFr    : project.category;
-
-  usePageTitle(title.replace("\n", " "));
 
   return (
     <motion.div
