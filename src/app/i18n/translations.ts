@@ -39,7 +39,7 @@ export const translations = {
       education: "Education",
       exp: [
         {
-          year: "2024 — 2025",
+          year: "2024 — 2026",
           title: "Social Media Manager, ESAD Amiens",
           items: ["Managing Instagram", "Event coverage", "Newsletter creation"],
         },
@@ -57,8 +57,8 @@ export const translations = {
       edu: [
         { year: "2024", title: "Graphic Design", institution: "ESAD Amiens" },
         { year: "2023", title: "Artistic Preparation", institution: "Prép'art" },
-        { year: "2023", title: "General Baccalaureate", institution: "Lycée" },
-        { year: "2020", title: "Diplôme National du Brevet", institution: "Collège" },
+        { year: "2023", title: "General Baccalaureate", institution: "High School" },
+        { year: "2020", title: "Diplôme National du Brevet", institution: "Middle School" },
       ],
       softwareList: ["Photoshop", "Illustrator", "InDesign", "Premiere Pro", "After Effects", "HTML & CSS"],
       languageList: [
@@ -116,7 +116,7 @@ export const translations = {
       education: "Formation",
       exp: [
         {
-          year: "2024 — 2025",
+          year: "2024 — 2026",
           title: "Responsable réseaux sociaux, ESAD Amiens",
           items: ["Gestion Instagram", "Couverture d'événements", "Création de newsletters"],
         },
