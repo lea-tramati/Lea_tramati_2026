@@ -186,8 +186,8 @@ export const projects: Project[] = [
     title: 'Slay',
     titleFr: 'Slay',
     eyebrow: 'ESAD Amiens — 2025',
-    category: 'Editorial Design',
-    categoryFr: 'Design éditorial',
+    category: 'Graphic Design',
+    categoryFr: 'Design graphique',
     cover: 'img/049.jpg',
     description:
       'In this project, we had to choose a word from two lists: commonly used words and words used by Generation Z. I chose the word "slay" and wanted to represent it through three distinct visuals.',
