@@ -88,7 +88,7 @@ export default function CVPage() {
             {/* RIGHT */}
             <article className="md:col-span-2 space-y-16">
               <div>
-                <h1 className="font-['Bebas_Neue'] text-[clamp(4rem,8vw,9rem)] leading-[0.88] text-white mb-6">
+                <h1 className="font-['Inter'] text-[clamp(4rem,8vw,9rem)] leading-[0.88] text-white mb-6">
                   Léa<br />Tramati
                 </h1>
                 <div className="flex items-center gap-3 mb-8">
@@ -104,7 +104,7 @@ export default function CVPage() {
 
               {/* Experiences */}
               <section>
-                <h2 className="font-['Bebas_Neue'] text-4xl text-white mb-8 border-b border-white/10 pb-4">
+                <h2 className="font-['Inter'] text-4xl text-white mb-8 border-b border-white/10 pb-4">
                   {t.experiences}
                 </h2>
                 <div className="space-y-8">
@@ -114,7 +114,7 @@ export default function CVPage() {
                         {exp.year}
                       </div>
                       <div className="col-span-3">
-                        <h3 className="font-['Archivo_Narrow'] text-base font-semibold text-white mb-2">
+                        <h3 className="font-['Inter'] text-base font-semibold text-white mb-2">
                           {exp.title}
                         </h3>
                         <ul className="font-['Inter'] text-sm text-gray-400 space-y-1">
@@ -133,7 +133,7 @@ export default function CVPage() {
 
               {/* Education */}
               <section>
-                <h2 className="font-['Bebas_Neue'] text-4xl text-white mb-8 border-b border-white/10 pb-4">
+                <h2 className="font-['Inter'] text-4xl text-white mb-8 border-b border-white/10 pb-4">
                   {t.education}
                 </h2>
                 <div className="grid grid-cols-2 gap-6">
@@ -142,7 +142,7 @@ export default function CVPage() {
                       <div className="font-['Inter'] text-[10px] tracking-wider text-white/40 mb-3">
                         {edu.year}
                       </div>
-                      <div className="font-['Archivo_Narrow'] text-base font-semibold text-white mb-1">
+                      <div className="font-['Inter'] text-base font-semibold text-white mb-1">
                         {edu.title}
                       </div>
                       <div className="font-['Inter'] text-xs text-white/50">

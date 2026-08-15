@@ -16,7 +16,7 @@ export default function NotFoundPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="font-['Bebas_Neue'] text-[20vw] leading-none text-white/10 select-none">
+          <div className="font-['Inter'] text-[20vw] leading-none text-white/10 select-none">
             404
           </div>
           <p className="font-['Inter'] text-xs tracking-[0.30em] uppercase text-white/40 mb-10 -mt-4">

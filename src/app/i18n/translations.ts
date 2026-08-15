@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     nav: {
-      work: "Selected Work",
+      work: "Work",
       workBack: "← Works",
       cv: "CV",
       contact: "Contact",
@@ -13,7 +13,7 @@ export const translations = {
     },
     home: {
       sectionLabel: "Selected Work",
-      sectionTitle: "SELECTED\nPROJECTS",
+      sectionTitle: "ALL\nPROJECTS",
       filterAll: "All",
       aboutLabel: "About",
       aboutText: "I am a graphic design student at ESAD Amiens, exploring the intersections of typography, editorial design, and visual identity. My work is driven by close attention to material and conceptual rigour.",
@@ -25,6 +25,7 @@ export const translations = {
       next: "Next Project",
       back: "Back",
       allWorks: "All Works",
+      imagePlaceholder: "Image coming soon",
     },
     footer: {
       tagline:
@@ -60,7 +61,8 @@ export const translations = {
         },
       ],
       edu: [
-        { year: "2024", title: "Graphic Design", institution: "ESAD Amiens" },
+        { year: "2026 — Summer", title: "Erasmus Semester Abroad, KISD Köln", institution: "Cologne, Germany" },
+        { year: "2024-2026", title: "Graphic Design", institution: "ESAD Amiens" },
         { year: "2023", title: "Artistic Preparation", institution: "Prép'art" },
         { year: "2023", title: "General Baccalaureate", institution: "High School" },
         { year: "2020", title: "Middle School Certificate", institution: "Middle School" },
@@ -83,7 +85,7 @@ export const translations = {
 
   fr: {
     nav: {
-      work: "Travaux sélectionnés",
+      work: "Travaux",
       workBack: "← Travaux",
       cv: "CV",
       contact: "Contact",
@@ -95,7 +97,7 @@ export const translations = {
     },
     home: {
       sectionLabel: "Travaux sélectionnés",
-      sectionTitle: "PROJETS\nSÉLECTIONNÉS",
+      sectionTitle: "TOUS LES\nPROJETS",
       filterAll: "Tous",
       aboutLabel: "À propos",
       aboutText: "Je suis étudiante en design graphique à l'ESAD Amiens, explorant les croisements entre typographie, design éditorial et identité visuelle. Mon travail est guidé par une attention particulière à la rigueur matérielle et conceptuelle.",
@@ -107,6 +109,7 @@ export const translations = {
       next: "Projet suivant",
       back: "Retour",
       allWorks: "Tous les travaux",
+      imagePlaceholder: "Image à venir",
     },
     footer: {
       tagline:
@@ -142,7 +145,8 @@ export const translations = {
         },
       ],
       edu: [
-        { year: "2024", title: "Design Graphique", institution: "ESAD Amiens" },
+        { year: "2026 — Été", title: "Semestre Erasmus à l'étranger, KISD Cologne", institution: "Cologne, Allemagne" },
+        { year: "2024-2026", title: "Design Graphique", institution: "ESAD Amiens" },
         { year: "2023", title: "Préparation artistique", institution: "Prép'art" },
         { year: "2023", title: "Baccalauréat général", institution: "Lycée" },
         { year: "2020", title: "Diplôme National du Brevet", institution: "Collège" },

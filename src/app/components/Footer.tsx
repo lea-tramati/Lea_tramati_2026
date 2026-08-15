@@ -8,11 +8,11 @@ export default function Footer() {
   const t = translations[lang].footer;
 
   return (
-    <footer className="bg-black border-t border-white/10 py-16">
+    <footer className="bg-black py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>
-            <h3 className="font-['Bebas_Neue'] text-6xl mb-4 text-white">CONTACT</h3>
+            <h3 className="font-['Inter'] text-6xl mb-4 text-white">CONTACT</h3>
             <p className="font-['Inter'] text-gray-400 text-sm leading-relaxed max-w-md">
               {t.tagline}
             </p>
@@ -42,7 +42,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="https://linkedin.com/in/léa-tramati-936222345"
+                href="https://linkedin.com/in/lea-tramati-936222345"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-['Inter'] text-xs tracking-wider text-gray-500 hover:text-white transition-colors uppercase"
@@ -59,11 +59,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-8 flex justify-between">
-          <span className="font-['Inter'] text-[9px] tracking-[0.22em] uppercase text-white/35">
+        <div className="pt-8 flex justify-between">
+          <span className="font-['Inter'] text-[10px] tracking-[0.22em] uppercase text-white/50">
             {t.copyright}
           </span>
-          <span className="font-['Inter'] text-[9px] tracking-[0.22em] uppercase text-white/35">
+          <span className="font-['Inter'] text-[10px] tracking-[0.22em] uppercase text-white/50">
             ESAD Amiens
           </span>
         </div>

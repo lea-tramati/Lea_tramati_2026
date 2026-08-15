@@ -1,12 +1,14 @@
 import { createHashRouter, RouterProvider } from "react-router";
 import { LanguageProvider } from "./context/LanguageContext";
 import HomePage from "./pages/HomePage";
+import WorkPage from "./pages/WorkPage";
 import ProjectPage from "./pages/ProjectPage";
 import CVPage from "./pages/CVPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createHashRouter([
   { path: "/", element: <HomePage /> },
+  { path: "/work", element: <WorkPage /> },
   { path: "/project/:slug", element: <ProjectPage /> },
   { path: "/cv", element: <CVPage /> },
   { path: "*", element: <NotFoundPage /> },

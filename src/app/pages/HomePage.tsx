@@ -1,98 +1,60 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router";
-import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
-import { ChevronDown } from "lucide-react";
+import { useEffect } from "react";
+import { Link } from "react-router";
+import { motion, useScroll, useTransform } from "motion/react";
+import { ChevronDown, Image as ImageIcon } from "lucide-react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { projects } from "../data/projects";
+import { projects, type Project } from "../data/projects";
 import { useLang } from "../context/LanguageContext";
-import { translations } from "../i18n/translations";
+import { translations, type Translations } from "../i18n/translations";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 const base = import.meta.env.BASE_URL;
 
-const heroImages = [
-  { src: `${base}img/003.jpg`, slug: "zaha-hadid",    baseX: "8%",  baseY: "10%", index: 0, delay: 0.10 },
-  { src: `${base}img/038.jpg`, slug: "baskerville",   baseX: "72%", baseY: "5%",  index: 1, delay: 0.15 },
-  { src: `${base}img/039.jpg`, slug: "haute-couture", baseX: "85%", baseY: "35%", index: 2, delay: 0.20 },
-  { src: `${base}img/015.jpg`, slug: "slash",         baseX: "12%", baseY: "55%", index: 3, delay: 0.25 },
-  { src: `${base}img/011.jpg`, slug: "vinyls",        baseX: "78%", baseY: "70%", index: 4, delay: 0.30 },
-  { src: `${base}img/001.jpg`, slug: "metamorphosis", baseX: "15%", baseY: "78%", index: 5, delay: 0.35 },
-  { src: `${base}img/030.jpg`, slug: "portofino",     baseX: "45%", baseY: "15%", index: 6, delay: 0.40 },
-];
+// Curated set of projects shown on the homepage: first and last are full-bleed, the two in between sit side by side.
+const featuredSlugs = ["zaha-hadid", "baskerville", "nomadic-workplace", "haute-couture"];
 
-function FloatingImage({
-  src, alt, delay, baseX, baseY, index, slug, onNavigate,
-}: {
-  src: string; alt: string; delay: number; baseX: string; baseY: string;
-  index: number; slug: string; onNavigate: (slug: string) => void;
-}) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [hasBeenDragged, setHasBeenDragged] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const aspectClass =
-    index % 3 === 0 ? "aspect-square" : index % 3 === 1 ? "aspect-[3/4]" : "aspect-[4/5]";
-
+function FullBleedTile({ project, lang, t }: { project: Project; lang: "en" | "fr"; t: Translations }) {
+  const title = (lang === "fr" ? project.titleFr : project.title).replace("\n", " ");
   return (
-    <motion.div
-      drag
-      dragMomentum={true}
-      dragElastic={0}
-      dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-      onDragStart={() => { setIsDragging(true); setHasBeenDragged(true); }}
-      onDragEnd={() => setIsDragging(false)}
-      whileDrag={{ scale: 1.1, zIndex: 1000, cursor: "grabbing" }}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: isDragging ? 1.1 : 1 }}
-      transition={{ delay, type: "spring", stiffness: 300, damping: 25 }}
-      style={{ left: baseX, top: baseY, position: "absolute" }}
-      className={`w-28 md:w-40 overflow-hidden shadow-2xl border border-white/20 ${aspectClass} ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div
-        onClick={() => { if (!hasBeenDragged) onNavigate(slug); setHasBeenDragged(false); }}
-        onMouseDown={() => setHasBeenDragged(false)}
-        className="w-full h-full relative"
-      >
+    <Link to={`/project/${project.slug}`} className="group block relative w-full h-screen overflow-hidden">
+      {project.coverPlaceholder ? (
+        <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-white/[0.03] border border-dashed border-white/15">
+          <ImageIcon className="w-6 h-6 text-white/20" strokeWidth={1} />
+          <span className="font-['Inter'] text-[9px] tracking-[0.25em] uppercase text-white/25">
+            {t.project.imagePlaceholder}
+          </span>
+        </div>
+      ) : (
         <motion.img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover select-none pointer-events-none"
-          draggable={false}
-          animate={{ filter: isDragging || isHovered ? "invert(1)" : "invert(0)" }}
-          transition={{ duration: 0.3 }}
+          src={`${base}${project.cover}`}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 0.6 }}
         />
-      </div>
-    </motion.div>
+      )}
+      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/35 transition-colors duration-300 pointer-events-none" />
+    </Link>
   );
 }
 
+
 export default function HomePage() {
   usePageTitle();
-  const navigate = useNavigate();
   const { lang } = useLang();
   const t = translations[lang];
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const visibleCategories = ["Typography", "Editorial Design", "Graphic Design", "Photography"];
-  const categories = [...new Set(projects.map(p => p.category))].filter(c => visibleCategories.includes(c));
-
-  const filtered = activeCategory
-    ? projects.filter(p => p.category === activeCategory)
-    : projects;
-
-  const getCategoryLabel = (cat: string) => {
-    const p = projects.find(pr => pr.category === cat);
-    return lang === "fr" ? (p?.categoryFr ?? cat) : cat;
-  };
+  const publishedProjects = featuredSlugs
+    .map((slug) => projects.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <motion.div
@@ -104,37 +66,20 @@ export default function HomePage() {
       <Nav />
 
       {/* Hero */}
-      <section id="hero" className="min-h-screen relative pt-32 pb-20">
+      <section id="hero" className="min-h-screen relative pt-32 pb-20 overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          src={`${base}video/remanence-bg.mp4`}
+          poster={`${base}video/remanence-bg-poster.jpg`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+        <div className="absolute inset-0 bg-black/35 pointer-events-none" />
+
         <div className="max-w-[1800px] mx-auto px-8 md:px-16 w-full relative min-h-[85vh]">
-          {heroImages.map((img, i) => (
-            <FloatingImage
-              key={i}
-              src={img.src}
-              alt={`Project ${i + 1}`}
-              delay={img.delay}
-              baseX={img.baseX}
-              baseY={img.baseY}
-              index={img.index}
-              slug={img.slug}
-              onNavigate={(slug) => navigate(`/project/${slug}`)}
-            />
-          ))}
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 pointer-events-none"
-          >
-            <h1 className="text-[18vw] md:text-[12vw] lg:text-[10rem] leading-[0.75] mb-4 text-white">
-              <span className="font-['Archivo_Narrow'] tracking-[0.15em] block font-semibold">LÉA</span>
-              <span className="font-['Archivo_Narrow'] tracking-[0.15em] italic block font-medium">TRAMATI</span>
-            </h1>
-            <p className="font-['Inter'] text-xs md:text-sm tracking-[0.25em] text-gray-400">
-              {t.hero.sub}
-            </p>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -142,7 +87,7 @@ export default function HomePage() {
             className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
           >
             <button
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
               className="px-8 py-3 bg-white text-black font-['Inter'] text-xs tracking-[0.15em] hover:bg-gray-200 transition-colors inline-block"
             >
               {t.hero.cta}
@@ -155,128 +100,16 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* About */}
-      <section id="about" className="border-t border-white/10 py-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="font-['Inter'] text-[9px] tracking-[0.36em] uppercase text-white/40 block mb-4">
-              {t.home.aboutLabel}
-            </span>
-            <h2 className="font-['Bebas_Neue'] text-5xl text-white leading-[0.9]">
-              Léa<br />Tramati
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="md:col-span-2"
-          >
-            <p className="font-['Inter'] text-sm text-gray-300 leading-relaxed mb-6 max-w-2xl">
-              {t.home.aboutText}
-            </p>
-            <span className="font-['Inter'] text-[9px] tracking-[0.28em] uppercase text-white/40">
-              {t.home.aboutLocation}
-            </span>
-          </motion.div>
+      {/* Work: two full-bleed projects bookending a pair of contained projects side by side */}
+      <section id="work" className="bg-black">
+        {publishedProjects[0] && <FullBleedTile project={publishedProjects[0]} lang={lang} t={t} />}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          {publishedProjects[1] && <FullBleedTile project={publishedProjects[1]} lang={lang} t={t} />}
+          {publishedProjects[2] && <FullBleedTile project={publishedProjects[2]} lang={lang} t={t} />}
         </div>
-      </section>
 
-      {/* Work grid */}
-      <section id="work" className="py-20 bg-black border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <div className="flex justify-between items-baseline border-b border-white/10 pb-5 mb-8">
-              <div>
-                <div className="font-['Inter'] text-[9px] tracking-[0.36em] uppercase text-white/40 mb-4">
-                  {t.home.sectionLabel}
-                </div>
-                <h2 className="font-['Bebas_Neue'] text-7xl md:text-9xl leading-[0.9] text-white whitespace-pre-line">
-                  {t.home.sectionTitle}
-                </h2>
-              </div>
-              <span className="font-['Inter'] text-[9px] tracking-[0.34em] text-white/40">
-                {filtered.length}
-              </span>
-            </div>
-
-            {/* Filtre catégories */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setActiveCategory(null)}
-                className={`font-['Inter'] text-[10px] tracking-[0.20em] uppercase px-4 py-1.5 border transition-colors ${
-                  activeCategory === null
-                    ? "border-white text-black bg-white"
-                    : "border-white/20 text-white/50 hover:border-white/50 hover:text-white"
-                }`}
-              >
-                {t.home.filterAll}
-              </button>
-              {categories.map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
-                  className={`font-['Inter'] text-[10px] tracking-[0.20em] uppercase px-4 py-1.5 border transition-colors ${
-                    activeCategory === cat
-                      ? "border-white text-black bg-white"
-                      : "border-white/20 text-white/50 hover:border-white/50 hover:text-white"
-                  }`}
-                >
-                  {getCategoryLabel(cat)}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AnimatePresence mode="popLayout">
-              {filtered.map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Link to={`/project/${project.slug}`} className="group block">
-                    <div className="relative overflow-hidden aspect-[4/5] bg-white/5 mb-4 border border-white/10">
-                      <motion.img
-                        src={`${base}${project.cover}`}
-                        alt={(lang === "fr" ? project.titleFr : project.title).replace("\n", " ")}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        whileHover={{ scale: 1.06, filter: "invert(1)" }}
-                        transition={{ duration: 0.5 }}
-                      />
-                    </div>
-                    <div>
-                      <div className="font-['Inter'] text-[9px] tracking-[0.32em] text-white/40 mb-1">
-                        {String(project.id).padStart(2, "0")}.
-                      </div>
-                      <h3 className="font-['Bebas_Neue'] text-2xl leading-tight mb-1 text-white">
-                        {(lang === "fr" ? project.titleFr : project.title).replace("\n", " ")}
-                      </h3>
-                      <p className="font-['Inter'] text-[10px] tracking-wider text-white/40 uppercase">
-                        {lang === "fr" ? project.categoryFr : project.category}
-                      </p>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </div>
+        {publishedProjects[3] && <FullBleedTile project={publishedProjects[3]} lang={lang} t={t} />}
       </section>
 
       <Footer />
