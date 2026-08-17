@@ -76,9 +76,11 @@ function ImageSection({ block, placeholderLabel }: { block: ProjectImage; placeh
   }
   if (block.type === "grid3") {
     return (
-      <section className="mb-6 grid grid-cols-2 md:grid-cols-3 gap-3">
+      <section className={`mb-6 grid grid-cols-2 md:grid-cols-3 ${block.gapClass ?? "gap-3"}`}>
         {block.srcs.map((src, i) => (
-          <img key={i} src={`${base}${src}`} alt={block.alts[i]} className={`w-full object-cover ${block.cellAspect ?? "aspect-square"}`} />
+          <div key={i} className={`${block.cellAspect ?? "aspect-square"} ${block.frameClass ?? ""}`}>
+            <img src={`${base}${src}`} alt={block.alts[i]} className="w-full h-full object-cover" />
+          </div>
         ))}
       </section>
     );
@@ -180,7 +182,7 @@ export default function ProjectPage() {
       <Nav />
 
       {/* Titre */}
-      <section className="pt-40 pb-16 px-6">
+      <section className="pt-40 pb-16 px-[clamp(1.5rem,5vw,4rem)]">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-['Inter'] text-[11px] tracking-[0.30em] uppercase text-white/55 block mb-6">
@@ -209,7 +211,7 @@ export default function ProjectPage() {
       </motion.section>
 
       {/* Description */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-[clamp(1.5rem,5vw,4rem)]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
           <div>
             <h2 className="font-['Inter'] text-3xl text-white mb-3">{t.description}</h2>
@@ -227,7 +229,7 @@ export default function ProjectPage() {
 
       {/* Galerie */}
       {project.images.length > 0 && (
-        <section className="py-12 px-6">
+        <section className="py-12 px-[clamp(1.5rem,5vw,4rem)]">
           <div className="max-w-7xl mx-auto">
             {project.images.map((block, i) => (
               <ImageSection key={i} block={block} placeholderLabel={t.imagePlaceholder} />
@@ -237,7 +239,7 @@ export default function ProjectPage() {
       )}
 
       {/* Navigation précédent / suivant */}
-      <section className="py-12 px-6">
+      <section className="py-12 px-[clamp(1.5rem,5vw,4rem)]">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div>
             {showPrev ? (

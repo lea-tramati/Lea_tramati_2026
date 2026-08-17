@@ -41,7 +41,7 @@ export default function WorkPage() {
                 to={`/project/${project.slug}`}
                 onMouseEnter={() => setHovered(project)}
                 onMouseLeave={() => setHovered(null)}
-                className="group flex items-center justify-between gap-6 border-b border-white/10 px-6 md:px-16 py-6 md:py-8 transition-colors hover:bg-white/[0.03]"
+                className="group flex items-center justify-between gap-6 border-b border-white/10 px-[clamp(1.5rem,5vw,4rem)] py-6 md:py-8 transition-colors hover:bg-white/[0.03]"
               >
                 <span className="font-['Inter'] text-[10px] tracking-[0.3em] text-white/40 w-10 shrink-0">
                   {String(i + 1).padStart(2, "0")}

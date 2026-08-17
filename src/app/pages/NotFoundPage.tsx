@@ -10,7 +10,7 @@ export default function NotFoundPage() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       <Nav />
-      <main className="flex-1 flex flex-col items-center justify-center px-6 text-center">
+      <main className="flex-1 flex flex-col items-center justify-center px-[clamp(1.5rem,5vw,4rem)] text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

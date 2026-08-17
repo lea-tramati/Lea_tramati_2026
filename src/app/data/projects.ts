@@ -11,6 +11,8 @@ export interface ProjectImage {
   alts: string[];
   items?: AsymmetricItem[];
   cellAspect?: string;
+  gapClass?: string;
+  frameClass?: string;
 }
 
 export interface Project {
@@ -48,10 +50,27 @@ export const projects: Project[] = [
     descriptionFr:
       "Ce coffret d'artiste propose une introduction à l'univers de Zaha Hadid, architecte et urbaniste irako-britannique reconnue pour ses formes fluides et résolument futuristes. Conçu comme une petite archive plutôt que comme un objet unique, il rassemble des affiches, des publications imprimées, un nuancier de couleurs sur mesure, des cartes postales et une série de modules en bois qui abstraient les points d'ancrage structurels du Phaeno Science Center. Chaque élément a été pensé pour être manipulé indépendamment, de sorte que l'ensemble se lit moins comme une monographie que comme un index physique du langage de Hadid — proportion, matière et mouvement traduits en impression et en volume.",
     images: [
-      { type: 'full', srcs: ['img/019.jpg'], alts: ["Zaha Hadid artist's box set — open view showing posters and printed materials"] },
-      { type: 'grid2', srcs: ['img/020.jpg', 'img/022.jpg'], alts: ['Zaha Hadid box set — wooden modules representing the Phaeno Science Center anchor points', 'Zaha Hadid box set — full contents laid out, including color chart and postcards'] },
+      {
+        type: 'asymmetric-hero',
+        srcs: [],
+        alts: [],
+        items: [
+          { src: 'img/019.jpg', alt: "Zaha Hadid artist's box set — open view showing posters and printed materials" },
+          { src: 'img/020.jpg', alt: 'Zaha Hadid box set — wooden modules representing the Phaeno Science Center anchor points' },
+          { src: 'img/022.jpg', alt: 'Zaha Hadid box set — full contents laid out, including color chart and postcards' },
+        ],
+      },
       { type: 'full', srcs: ['img/023.jpg'], alts: ['Zaha Hadid box set — close-up of print and material details'] },
-      { type: 'full', srcs: ['img/024.jpg'], alts: ['Zaha Hadid box set — final presentation of the complete collection'] },
+      {
+        type: 'asymmetric-mirror',
+        srcs: [],
+        alts: [],
+        items: [
+          { src: 'img/zaha-hadid-modules.jpg', alt: 'Zaha Hadid box set — nested boxes and wooden anchor-point modules laid out' },
+          { src: 'img/zaha-hadid-box-closed.jpg', alt: 'Zaha Hadid box set — closed box, cover typography detail' },
+          { src: 'img/024.jpg', alt: 'Zaha Hadid box set — final presentation of the complete collection' },
+        ],
+      },
     ],
     prev: null,
     next: { slug: 'baskerville', name: 'Baskerville, the Specimen', nameFr: 'Baskerville, le Spécimen' },
@@ -84,7 +103,7 @@ export const projects: Project[] = [
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Editorial Design',
     categoryFr: 'Design éditorial',
-    cover: 'img/039.jpg',
+    cover: 'img/haute-couture-cover.jpg',
     description:
       "Produced in collaboration with the school's documentation center, this editorial project takes the form of an archive dedicated to haute couture and the wider fashion industry. Photography and primary documentation — clippings, references, and printed matter drawn from the center's collection — are brought together into a single bound edition, structured to read as both a research tool and a visual object in its own right.",
     descriptionFr:
@@ -104,12 +123,14 @@ export const projects: Project[] = [
     eyebrow: 'ESAD Amiens — 2025',
     category: 'Graphic Design',
     categoryFr: 'Design graphique',
-    cover: 'img/015.jpg',
+    cover: 'img/slash-cover.jpg',
     description:
       "This experimental poster grew out of a screen-printing workshop built around the pop icon Chappell Roan. Working as a group, we explored typography that could carry the singer's visual language — cast here as Joan of Arc — drawing in particular on Gothic blackletter forms associated with the Middle Ages to bridge a contemporary pop persona with a historical register.",
     descriptionFr:
       "Cette affiche expérimentale est née d'un atelier de sérigraphie construit autour de l'icône pop Chappell Roan. En groupe, nous avons exploré une typographie capable de porter l'univers visuel de la chanteuse — représentée ici en Jeanne d'Arc — en nous appuyant notamment sur des lettres gothiques associées au Moyen Âge, pour faire dialoguer une figure pop contemporaine avec un registre historique.",
-    images: [],
+    images: [
+      { type: 'full', srcs: ['img/015.jpg'], alts: ['Slash screen-printed poster — Chappell Roan as Joan of Arc, Gothic blackletter typography'] },
+    ],
     prev: { slug: 'haute-couture', name: 'Haute Couture', nameFr: 'Haute Couture' },
     next: { slug: 'vinyls', name: 'Vinyls', nameFr: 'Vinyles' },
   },
@@ -212,9 +233,7 @@ export const projects: Project[] = [
       "For this project we were asked to choose a word from two lists — everyday vocabulary and Generation Z slang — and build a visual response around it. I chose the word \"slay\" and developed it across three distinct visuals, exploring how a single piece of contemporary slang can be given very different graphic identities.",
     descriptionFr:
       "Pour ce projet, nous devions choisir un mot parmi deux listes : vocabulaire courant et expressions de la génération Z, puis construire une réponse visuelle autour de ce mot. J'ai choisi « slay » et l'ai développé à travers trois visuels distincts, en explorant la manière dont une même expression contemporaine peut recevoir des identités graphiques radicalement différentes.",
-    images: [
-      { type: 'grid3', srcs: ['img/042.jpg', 'img/043.jpg', 'img/047.jpg'], alts: ['Slay screen-printed poster — visual 1, Gothic lettering inspired by Joan of Arc', 'Slay screen-printed poster — visual 2', 'Slay screen-printed poster — visual 3'], cellAspect: 'aspect-[3/5]' },
-    ],
+    images: [],
     prev: { slug: 'portofino-font', name: 'Portofino, Font', nameFr: 'Portofino, Police' },
     next: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA', nameFr: 'IA vs Non IA' },
   },
@@ -293,95 +312,42 @@ export const projects: Project[] = [
       { type: 'video-full', srcs: ['video/untitled-preview.mp4'], alts: ['Nomadic Workplace — AR experience preview'] },
     ],
     prev: { slug: 'the-passers-by', name: 'The Passers-by', nameFr: 'Les Passants' },
-    next: { slug: 'untitled-02', name: 'Untitled II', nameFr: 'Sans Titre II' },
+    next: { slug: 'untitled-02', name: 'Feed your Head', nameFr: 'Feed your Head' },
   },
   {
     id: 14,
     slug: 'untitled-02',
-    title: 'Untitled\nII',
-    titleFr: 'Sans Titre\nII',
+    title: 'Feed your Head',
+    titleFr: 'Feed your Head',
     eyebrow: 'Untitled Project — 2026',
     category: 'Editorial Design',
     categoryFr: 'Design éditorial',
-    cover: '',
-    coverPlaceholder: true,
+    cover: 'img/untitled-02-mockup.jpg',
     draft: true,
     description:
-      "Description to come — replace this placeholder text with the write-up for this project once it's ready.",
+      "During an Erasmus exchange at KISD in Cologne, Germany, I had the chance to dig deeper into the music and culture of the 1960s and 70s. We were invited to choose a topic to present, and I chose to talk about this song — noticing how closely its themes echoed those of Jefferson Airplane's \"White Rabbit\": drug use, counterculture, and the wider social and cultural movements of the era. That reflection went on to inspire a poster responding to these themes.",
     descriptionFr:
-      "Description à venir — remplace ce texte provisoire par la présentation de ce projet une fois prêt.",
-    images: [
-      {
-        type: 'asymmetric-mirror',
-        srcs: [],
-        alts: [],
-        items: [
-          { placeholder: true, alt: 'Untitled II — secondary view top' },
-          { placeholder: true, alt: 'Untitled II — secondary view bottom' },
-          { placeholder: true, alt: 'Untitled II — main view' },
-        ],
-      },
-    ],
+      "Lors de mon séjour Erasmus à Cologne, en Allemagne, j'ai eu l'occasion d'approfondir mes connaissances sur les années 60 et 70. Nous étions invités à choisir un sujet de discussion, j'ai alors choisi de parler de cette chanson et j'ai remarqué que les thèmes abordés faisaient écho à White Rabbit de Jefferson Airplane : la consommation de drogues, la contre-culture, ainsi que les mouvements sociaux et culturels de cette époque. Cette réflexion m'a ensuite inspiré la création d'une affiche en réponse à ces thématiques.",
+    images: [],
     prev: { slug: 'nomadic-workplace', name: 'Nomadic Workplace', nameFr: 'Nomadic Workplace' },
-    next: { slug: 'untitled-03', name: 'Untitled III', nameFr: 'Sans Titre III' },
+    next: { slug: 'untitled-03', name: 'Business Card, CT.', nameFr: 'Carte de visite, CT.' },
   },
   {
     id: 15,
     slug: 'untitled-03',
-    title: 'Untitled\nIII',
-    titleFr: 'Sans Titre\nIII',
+    title: 'Business Card,\nCT.',
+    titleFr: 'Carte de visite,\nCT.',
     eyebrow: 'Untitled Project — 2026',
     category: 'Typography',
     categoryFr: 'Typographie',
-    cover: '',
-    coverPlaceholder: true,
+    cover: 'img/untitled-03-business-card.jpg',
     draft: true,
     description:
-      "Description to come — replace this placeholder text with the write-up for this project once it's ready.",
+      "This project was conceived as a branding exercise built around business cards for my father, developing a visual identity of his own tailored to his line of work.",
     descriptionFr:
-      "Description à venir — remplace ce texte provisoire par la présentation de ce projet une fois prêt.",
-    images: [
-      {
-        type: 'asymmetric-hero',
-        srcs: [],
-        alts: [],
-        items: [
-          { placeholder: true, alt: 'Untitled III — wide hero view' },
-          { placeholder: true, alt: 'Untitled III — detail left' },
-          { placeholder: true, alt: 'Untitled III — detail right' },
-        ],
-      },
-    ],
-    prev: { slug: 'untitled-02', name: 'Untitled II', nameFr: 'Sans Titre II' },
-    next: { slug: 'untitled-04', name: 'Untitled IV', nameFr: 'Sans Titre IV' },
-  },
-  {
-    id: 16,
-    slug: 'untitled-04',
-    title: 'Untitled\nIV',
-    titleFr: 'Sans Titre\nIV',
-    eyebrow: 'Untitled Project — 2026',
-    category: 'Photography',
-    categoryFr: 'Photographie',
-    cover: '',
-    coverPlaceholder: true,
-    draft: true,
-    description:
-      "Description to come — replace this placeholder text with the write-up for this project once it's ready.",
-    descriptionFr:
-      "Description à venir — remplace ce texte provisoire par la présentation de ce projet une fois prêt.",
-    images: [
-      {
-        type: 'asymmetric-overlap',
-        srcs: [],
-        alts: [],
-        items: [
-          { placeholder: true, alt: 'Untitled IV — main view' },
-          { placeholder: true, alt: 'Untitled IV — overlapping detail' },
-        ],
-      },
-    ],
-    prev: { slug: 'untitled-03', name: 'Untitled III', nameFr: 'Sans Titre III' },
+      "Ce projet a été pensé comme un exercice de branding autour de cartes de visite pour mon père, avec la volonté de lui créer une identité visuelle propre, pensée pour son activité.",
+    images: [],
+    prev: { slug: 'untitled-02', name: 'Feed your Head', nameFr: 'Feed your Head' },
     next: null,
   },
 ];

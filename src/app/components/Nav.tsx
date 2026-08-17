@@ -21,7 +21,7 @@ export default function Nav() {
         onMouseLeave={() => setWorkMenuOpen(false)}
         className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-sm border-b border-white/10"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-[clamp(1.5rem,5vw,4rem)] py-4 flex items-center justify-between">
           <div className="flex items-baseline gap-3">
             <Link
               to="/"
@@ -85,7 +85,7 @@ export default function Nav() {
               transition={{ duration: 0.2 }}
               className="hidden md:block border-t border-white/10 bg-black"
             >
-              <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-4 gap-x-8 gap-y-2">
+              <div className="max-w-7xl mx-auto px-[clamp(1.5rem,5vw,4rem)] py-10 grid grid-cols-4 gap-x-8 gap-y-2">
                 {publishedProjects.map((p) => (
                   <Link
                     key={p.slug}

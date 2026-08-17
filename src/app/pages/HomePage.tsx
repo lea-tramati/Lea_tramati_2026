@@ -79,7 +79,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
-        <div className="max-w-[1800px] mx-auto px-8 md:px-16 w-full relative min-h-[85vh]">
+        <div className="max-w-[1800px] mx-auto px-[clamp(1.5rem,5vw,4rem)] w-full relative min-h-[85vh]">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black py-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>
             <h3 className="font-['Inter'] text-6xl mb-4 text-white">CONTACT</h3>
