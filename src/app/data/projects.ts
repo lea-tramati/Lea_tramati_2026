@@ -61,16 +61,7 @@ export const projects: Project[] = [
         ],
       },
       { type: 'full', srcs: ['img/023.jpg'], alts: ['Zaha Hadid box set — close-up of print and material details'] },
-      {
-        type: 'asymmetric-mirror',
-        srcs: [],
-        alts: [],
-        items: [
-          { src: 'img/zaha-hadid-modules.jpg', alt: 'Zaha Hadid box set — nested boxes and wooden anchor-point modules laid out' },
-          { src: 'img/zaha-hadid-box-closed.jpg', alt: 'Zaha Hadid box set — closed box, cover typography detail' },
-          { src: 'img/024.jpg', alt: 'Zaha Hadid box set — final presentation of the complete collection' },
-        ],
-      },
+      { type: 'full', srcs: ['img/024.jpg'], alts: ['Zaha Hadid box set — final presentation of the complete collection'] },
     ],
     prev: null,
     next: { slug: 'baskerville', name: 'Baskerville, the Specimen', nameFr: 'Baskerville, le Spécimen' },
@@ -83,7 +74,7 @@ export const projects: Project[] = [
     eyebrow: 'ESAD Amiens — 2024',
     category: 'Typography',
     categoryFr: 'Typographie',
-    cover: 'img/038.jpg',
+    cover: 'img/baskerville-cover.jpg',
     description:
       "This project is a three-part study of the Libre Baskerville typeface, approached as both a design object and a piece of typographic research. The first edition is iconographic, staging the letterforms within visual compositions that foreground their historical character; the second is analytical, documenting the typeface's construction, proportions, and defining details; the third is a standalone poster built around a visual drawn from Conan Doyle's The Hound of the Baskervilles, tying the specimen back to the literary reference embedded in its name.",
     descriptionFr:
@@ -268,9 +259,9 @@ export const projects: Project[] = [
     categoryFr: 'Design print',
     cover: 'img/050.jpg',
     description:
-      "For this project I imagined and designed three posters inspired by Albert Camus's The Stranger, each one translating a different facet of the novel's tone — detachment, heat, and absurdity — into a distinct visual composition.",
+      "For this project I imagined and designed three posters inspired by Albert Camus's The Stranger, each one translating a different facet of the novel's tone — detachment, heat, and absurdity — into a distinct visual composition. The deliberately clumsy typography — the missing accent on the É in \"L'ÉTRANGER,\" the apostrophe that seems almost detached from the \"e\" — visually echoes the novel's absurdism: like Meursault, a stranger to the world around him, the lettering itself seems to come slightly unmoored from the words it carries. On the first poster, the word \"camus,\" placed at the top, points to the sun, but also to the turn the story takes and the scale it eventually reaches.",
     descriptionFr:
-      "Pour ce projet, j'ai imaginé et conçu trois affiches inspirées de L'Étranger d'Albert Camus, chacune traduisant une facette différente du ton du roman — détachement, chaleur, absurde — en une composition visuelle distincte.",
+      "Pour ce projet, j'ai imaginé et conçu trois affiches inspirées de L'Étranger d'Albert Camus, chacune traduisant une facette différente du ton du roman — détachement, chaleur, absurde — en une composition visuelle distincte. Le jeu typographique volontairement maladroit — l'accent absent sur le É de « L'ÉTRANGER », l'apostrophe presque détachée du « e » — traduit visuellement l'absurde : comme Meursault, étranger au monde qui l'entoure, la typographie semble elle aussi se désolidariser des mots qu'elle porte. Sur la première affiche, le mot « camus » placé en haut renvoie au soleil, mais aussi au tournant que prend le récit et à l'ampleur qu'il finit par prendre.",
     images: [],
     prev: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA', nameFr: 'IA vs Non IA' },
     next: { slug: 'the-passers-by', name: 'The Passers-by', nameFr: 'Les Passants' },
