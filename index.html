@@ -23,7 +23,20 @@
       <meta name="twitter:image" content="https://lea-tramati.github.io/Lea_tramati_2026/img/003.jpg" />
 
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-      
+
+      <script type="text/javascript">
+        // Single Page Apps for GitHub Pages redirect trick.
+        // Restores the real path (encoded by 404.html) before React Router mounts.
+        (function (l) {
+          if (l.search[1] === '/') {
+            var decoded = l.search.slice(1).split('&').map(function (s) {
+              return s.replace(/~and~/g, '&');
+            }).join('?');
+            window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+          }
+        })(window.location);
+      </script>
+
     </head>
 
     <body>
