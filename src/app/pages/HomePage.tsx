@@ -12,7 +12,7 @@ import { usePageTitle } from "../hooks/usePageTitle";
 const base = import.meta.env.BASE_URL;
 
 // Curated set of projects shown on the homepage: first and last are full-bleed, the two in between sit side by side.
-const featuredSlugs = ["zaha-hadid", "baskerville", "nomadic-workplace", "haute-couture"];
+const featuredSlugs = ["zaha-hadid", "untitled-02", "nomadic-workplace", "untitled-03"];
 
 function FullBleedTile({ project, lang, t }: { project: Project; lang: "en" | "fr"; t: Translations }) {
   const title = (lang === "fr" ? project.titleFr : project.title).replace("\n", " ");
