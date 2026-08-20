@@ -61,6 +61,7 @@ export const translations = {
         },
       ],
       edu: [
+        { year: "2026 — August", title: "Art History Certification", institution: "Art Explora Academy, validated by Sorbonne University" },
         { year: "2026 — Summer", title: "Erasmus Semester Abroad, KISD Köln", institution: "Cologne, Germany" },
         { year: "2024-2026", title: "Graphic Design", institution: "ESAD Amiens" },
         { year: "2023", title: "Artistic Preparation", institution: "Prép'art" },
@@ -145,6 +146,7 @@ export const translations = {
         },
       ],
       edu: [
+        { year: "2026 — Août", title: "Certification en Histoire de l'Art", institution: "Art Explora Academy, validée par la Sorbonne" },
         { year: "2026 — Été", title: "Semestre Erasmus à l'étranger, KISD Cologne", institution: "Cologne, Allemagne" },
         { year: "2024-2026", title: "Design Graphique", institution: "ESAD Amiens" },
         { year: "2023", title: "Préparation artistique", institution: "Prép'art" },
