@@ -25,6 +25,8 @@ export interface Project {
   categoryFr: string;
   cover: string;
   coverPlaceholder?: boolean;
+  /** When set, the homepage tile plays this video on loop instead of showing the static cover image. */
+  coverVideo?: string;
   heroImage?: string;
   description: string;
   descriptionFr: string;
@@ -295,6 +297,7 @@ export const projects: Project[] = [
     category: 'Graphic Design',
     categoryFr: 'Design graphique',
     cover: 'img/nomadic-workplace-cover.jpg',
+    coverVideo: 'video/untitled-preview.mp4',
     description:
       "Made during an Erasmus semester at KISD in Cologne, Germany, this group project examines the idea of the workspace and how each person comes to define it for themselves. Following a tour of the school, we selected a handful of rooms and spaces that had caught our attention, using them as landmarks for a narrative built to connect with the rest of the class. The result takes the form of a guided-tour video conceived as a mixed-media piece, blending several visual and narrative approaches. Its soundtrack combines original audio recordings — captured and edited by the group — with a music excerpt.",
     descriptionFr:

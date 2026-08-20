@@ -25,6 +25,19 @@ function FullBleedTile({ project, lang, t }: { project: Project; lang: "en" | "f
             {t.project.imagePlaceholder}
           </span>
         </div>
+      ) : project.coverVideo ? (
+        <motion.video
+          src={`${base}${project.coverVideo}`}
+          poster={`${base}${project.cover}`}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 0.6 }}
+        />
       ) : (
         <motion.img
           src={`${base}${project.cover}`}
