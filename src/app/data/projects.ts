@@ -314,7 +314,6 @@ export const projects: Project[] = [
     category: 'Editorial Design',
     categoryFr: 'Design éditorial',
     cover: 'img/untitled-02-mockup.jpg',
-    draft: true,
     description:
       "During an Erasmus exchange at KISD in Cologne, Germany, I had the chance to dig deeper into the music and culture of the 1960s and 70s. We were invited to choose a topic to present, and I chose to talk about this song — noticing how closely its themes echoed those of Jefferson Airplane's \"White Rabbit\": drug use, counterculture, and the wider social and cultural movements of the era. That reflection went on to inspire a poster responding to these themes.",
     descriptionFr:
@@ -332,7 +331,6 @@ export const projects: Project[] = [
     category: 'Typography',
     categoryFr: 'Typographie',
     cover: 'img/untitled-03-business-card.jpg',
-    draft: true,
     description:
       "This project was conceived as a branding exercise built around business cards for my father, developing a visual identity of his own tailored to his line of work.",
     descriptionFr:
