@@ -82,8 +82,8 @@ export default function HomePage() {
       <section id="hero" className="min-h-screen relative pt-32 pb-20 overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          src={`${base}video/remanence-bg.mp4`}
-          poster={`${base}video/remanence-bg-poster.jpg`}
+          src={`${base}video/liquid-smooth-bg.mp4`}
+          poster={`${base}video/liquid-smooth-bg-poster.jpg`}
           autoPlay
           muted
           loop
