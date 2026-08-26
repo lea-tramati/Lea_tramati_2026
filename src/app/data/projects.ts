@@ -350,7 +350,7 @@ export const projects: Project[] = [
     eyebrow: 'Personal Project — 2026',
     category: 'Brand Design',
     categoryFr: 'Design de marque',
-    cover: 'img/darling-brand-cover.png',
+    cover: 'img/darling-brand-cover-v2.png',
     description:
       "Darling is a fictional brand identity built around a range of CBD-infused flavored teas. The project imagines a full brand territory grown out of a real place in Amiens: the Darlington square.\n\nThe goal was to turn this street, or this lane, into a genuine brand territory, developing a visual identity coherent and versatile enough to extend across a full product range. The name \"Darling,\" with its elegant, precious ring, directly echoes the sound of the chosen location, while creating a contrast with the more controversial or intriguing image usually associated with CBD.\n\nThe packaging embraces a refined, elegant aesthetic, designed to create a deliberate break between the brand's premium world and the product's more unconventional origin. The whole visual system seeks a balance between curiosity, sophistication, and consistency, so the identity can extend naturally across the full range.",
     descriptionFr:
@@ -364,7 +364,7 @@ export const projects: Project[] = [
       },
       {
         type: 'grid2',
-        srcs: ['img/darling-brand-box.jpg', 'img/darling-brand-teabag.jpg'],
+        srcs: ['img/darling-brand-box-v2.jpg', 'img/darling-brand-teabag.jpg'],
         alts: ['Darling tea packaging — open box detail showing the mojito flavor', 'Darling tea packaging — individual tea bag and flavor tag on a plate'],
       },
     ],
