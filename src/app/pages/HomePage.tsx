@@ -81,34 +81,18 @@ export default function HomePage() {
       {/* Hero */}
       <section id="hero" className="min-h-screen relative pt-32 pb-20 overflow-hidden bg-black">
         <div className="max-w-[1800px] mx-auto px-[clamp(1.5rem,5vw,4rem)] w-full relative min-h-[85vh] flex flex-col justify-center">
-          <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="flex-1"
-            >
-              <span className="block font-['Inter'] text-[clamp(0.9rem,1.6vw,1.25rem)] tracking-[0.3em] uppercase text-white/55 mb-3 md:mb-5">
-                {t.hero.intro}
-              </span>
-              <h1 className="font-['Inter'] font-bold uppercase leading-[0.9] tracking-tight text-[clamp(3rem,9vw,8.5rem)] text-white">
-                {t.hero.name}
-              </h1>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="w-40 sm:w-56 md:w-64 lg:w-72 shrink-0"
-            >
-              <img
-                src={`${base}img/lea-tramati-portrait.jpg`}
-                alt="Léa Tramati"
-                className="w-full aspect-[3/4] object-cover grayscale"
-              />
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="block font-['Inter'] text-[clamp(0.9rem,1.6vw,1.25rem)] tracking-[0.3em] uppercase text-white/55 mb-3 md:mb-5">
+              {t.hero.intro}
+            </span>
+            <h1 className="font-['Inter'] font-bold uppercase leading-[0.9] tracking-tight text-[clamp(3rem,9vw,8.5rem)] text-white">
+              {t.hero.name}
+            </h1>
+          </motion.div>
         </div>
 
         <motion.div
