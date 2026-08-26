@@ -85,17 +85,13 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="font-['Inter'] font-bold uppercase leading-[0.95] tracking-tight text-[clamp(2rem,6.2vw,5.5rem)] text-white"
           >
-            {t.hero.titleRows.map(([left, right], i) => (
-              <div key={i} className="flex justify-between">
-                <span>{left}</span>
-                <span>{right}</span>
-              </div>
-            ))}
-            <div className="flex justify-end mt-4 md:mt-6">
-              <span>{t.hero.name}</span>
-            </div>
+            <span className="block font-['Inter'] text-[clamp(0.9rem,1.6vw,1.25rem)] tracking-[0.3em] uppercase text-white/55 mb-3 md:mb-5">
+              {t.hero.intro}
+            </span>
+            <h1 className="font-['Inter'] font-bold leading-[0.9] tracking-tight text-[clamp(3rem,9vw,8.5rem)] text-white">
+              {t.hero.name}
+            </h1>
           </motion.div>
         </div>
 
