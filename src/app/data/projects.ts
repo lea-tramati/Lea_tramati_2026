@@ -223,9 +223,9 @@ export const projects: Project[] = [
     categoryFr: 'Design graphique',
     cover: 'img/049.jpg',
     description:
-      "For this project we were asked to choose a word from two lists — everyday vocabulary and Generation Z slang — and build a visual response around it. I chose the word \"slay\" and developed it across three distinct visuals, exploring how a single piece of contemporary slang can be given very different graphic identities.",
+      "For this project we were asked to choose a word from two lists — everyday vocabulary and Generation Z slang — and build a visual response around it. I chose the word \"slay\" and developed it across three distinct visuals, exploring how a single piece of contemporary slang can be given very different graphic identities. This project was made with the help of my classmates Romane Barba-Lopez and Maellyne Scwan.",
     descriptionFr:
-      "Pour ce projet, nous devions choisir un mot parmi deux listes : vocabulaire courant et expressions de la génération Z, puis construire une réponse visuelle autour de ce mot. J'ai choisi « slay » et l'ai développé à travers trois visuels distincts, en explorant la manière dont une même expression contemporaine peut recevoir des identités graphiques radicalement différentes.",
+      "Pour ce projet, nous devions choisir un mot parmi deux listes : vocabulaire courant et expressions de la génération Z, puis construire une réponse visuelle autour de ce mot. J'ai choisi « slay » et l'ai développé à travers trois visuels distincts, en explorant la manière dont une même expression contemporaine peut recevoir des identités graphiques radicalement différentes. Ce projet a été réalisé avec l'aide de mes camarades Romane Barba-Lopez et Maellyne Scwan.",
     images: [],
     prev: { slug: 'portofino-font', name: 'Portofino, Font', nameFr: 'Portofino, Police' },
     next: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA', nameFr: 'IA vs Non IA' },
