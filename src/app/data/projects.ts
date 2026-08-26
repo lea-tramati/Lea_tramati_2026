@@ -403,6 +403,25 @@ export const projects: Project[] = [
       },
     ],
     prev: { slug: 'darling-brand', name: 'Darling, Brand', nameFr: 'Darling, Marque' },
+    next: { slug: 'liquid-smooth', name: 'Liquid Smooth', nameFr: 'Liquid Smooth' },
+  },
+  {
+    id: 18,
+    slug: 'liquid-smooth',
+    title: 'Liquid Smooth',
+    titleFr: 'Liquid Smooth',
+    eyebrow: 'Personal Project — 2026',
+    category: 'Motion Design',
+    categoryFr: 'Motion Design',
+    cover: 'img/liquid-smooth-bg-poster.jpg',
+    description:
+      "Liquid Smooth is a looping motion piece built around fluid, organic movement and sound. Originally created as the site's own homepage background, it now stands as a piece in its own right — best experienced with the sound on.",
+    descriptionFr:
+      "Liquid Smooth est une pièce animée en boucle construite autour d'un mouvement fluide et organique et du son. Conçue à l'origine comme fond animé de la page d'accueil du site, elle prend ici la forme d'une pièce à part entière — à découvrir de préférence avec le son.",
+    images: [
+      { type: 'video-full', srcs: ['video/liquid-smooth-bg.mp4'], alts: ['Liquid Smooth — looping abstract fluid motion piece'] },
+    ],
+    prev: { slug: 'street-fashion', name: 'Street Fashion', nameFr: 'La mode dans la rue' },
     next: null,
   },
 ];

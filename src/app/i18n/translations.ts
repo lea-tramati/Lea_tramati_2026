@@ -10,6 +10,14 @@ export const translations = {
     hero: {
       sub: "GRAPHIC DESIGNER • ESAD AMIENS",
       cta: "EXPLORE WORK",
+      titleRows: [
+        ["THIS", "IS"],
+        ["", "A"],
+        ["GRAPHIC DESIGN", ""],
+        ["PORTFOLIO", ""],
+        ["BY", ""],
+      ] as [string, string][],
+      name: "LÉA TRAMATI",
     },
     home: {
       sectionLabel: "Selected Work",
@@ -95,6 +103,14 @@ export const translations = {
     hero: {
       sub: "DESIGNER GRAPHIQUE • ESAD AMIENS",
       cta: "VOIR LES PROJETS",
+      titleRows: [
+        ["CECI", "EST"],
+        ["", "UN"],
+        ["PORTFOLIO DE", ""],
+        ["DESIGN GRAPHIQUE", ""],
+        ["PAR", ""],
+      ] as [string, string][],
+      name: "LÉA TRAMATI",
     },
     home: {
       sectionLabel: "Travaux sélectionnés",

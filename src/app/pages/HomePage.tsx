@@ -79,34 +79,39 @@ export default function HomePage() {
       <Nav />
 
       {/* Hero */}
-      <section id="hero" className="min-h-screen relative pt-32 pb-20 overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          src={`${base}video/liquid-smooth-bg.mp4`}
-          poster={`${base}video/liquid-smooth-bg-poster.jpg`}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
-        <div className="absolute inset-0 bg-black/35 pointer-events-none" />
-
-        <div className="max-w-[1800px] mx-auto px-[clamp(1.5rem,5vw,4rem)] w-full relative min-h-[85vh]">
+      <section id="hero" className="min-h-screen relative pt-32 pb-20 overflow-hidden bg-black">
+        <div className="max-w-[1800px] mx-auto px-[clamp(1.5rem,5vw,4rem)] w-full relative min-h-[85vh] flex flex-col justify-center">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="font-['Inter'] font-bold uppercase leading-[0.95] tracking-tight text-[clamp(2rem,6.2vw,5.5rem)] text-white"
           >
-            <button
-              onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-3 bg-white text-black font-['Inter'] text-xs tracking-[0.15em] hover:bg-gray-200 transition-colors inline-block"
-            >
-              {t.hero.cta}
-            </button>
+            {t.hero.titleRows.map(([left, right], i) => (
+              <div key={i} className="flex justify-between">
+                <span>{left}</span>
+                <span>{right}</span>
+              </div>
+            ))}
+            <div className="flex justify-end mt-4 md:mt-6">
+              <span>{t.hero.name}</span>
+            </div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        >
+          <button
+            onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-8 py-3 bg-white text-black font-['Inter'] text-xs tracking-[0.15em] hover:bg-gray-200 transition-colors inline-block"
+          >
+            {t.hero.cta}
+          </button>
+        </motion.div>
 
         <motion.div style={{ opacity }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <ChevronDown className="w-6 h-6 animate-bounce text-white" />
