@@ -118,9 +118,9 @@ export const projects: Project[] = [
     categoryFr: 'Design graphique',
     cover: 'img/slash-cover.jpg',
     description:
-      "This experimental poster grew out of a screen-printing workshop built around the pop icon Chappell Roan. Working as a group, we explored typography that could carry the singer's visual language — cast here as Joan of Arc — drawing in particular on Gothic blackletter forms associated with the Middle Ages to bridge a contemporary pop persona with a historical register.",
+      "This experimental poster grew out of a screen-printing workshop built around the pop icon Chappell Roan. Working as a group, we explored typography that could carry the singer's visual language — cast here as Joan of Arc — drawing in particular on Gothic blackletter forms associated with the Middle Ages to bridge a contemporary pop persona with a historical register. This project was made with the help of my classmates Romane Barba-Lopez and Maellyne Scwan.",
     descriptionFr:
-      "Cette affiche expérimentale est née d'un atelier de sérigraphie construit autour de l'icône pop Chappell Roan. En groupe, nous avons exploré une typographie capable de porter l'univers visuel de la chanteuse — représentée ici en Jeanne d'Arc — en nous appuyant notamment sur des lettres gothiques associées au Moyen Âge, pour faire dialoguer une figure pop contemporaine avec un registre historique.",
+      "Cette affiche expérimentale est née d'un atelier de sérigraphie construit autour de l'icône pop Chappell Roan. En groupe, nous avons exploré une typographie capable de porter l'univers visuel de la chanteuse — représentée ici en Jeanne d'Arc — en nous appuyant notamment sur des lettres gothiques associées au Moyen Âge, pour faire dialoguer une figure pop contemporaine avec un registre historique. Ce projet a été réalisé avec l'aide de mes camarades Romane Barba-Lopez et Maellyne Scwan.",
     images: [
       { type: 'full', srcs: ['img/015.jpg'], alts: ['Slash screen-printed poster — Chappell Roan as Joan of Arc, Gothic blackletter typography'] },
     ],
@@ -223,9 +223,9 @@ export const projects: Project[] = [
     categoryFr: 'Design graphique',
     cover: 'img/049.jpg',
     description:
-      "For this project we were asked to choose a word from two lists — everyday vocabulary and Generation Z slang — and build a visual response around it. I chose the word \"slay\" and developed it across three distinct visuals, exploring how a single piece of contemporary slang can be given very different graphic identities. This project was made with the help of my classmates Romane Barba-Lopez and Maellyne Scwan.",
+      "For this project we were asked to choose a word from two lists — everyday vocabulary and Generation Z slang — and build a visual response around it. I chose the word \"slay\" and developed it across three distinct visuals, exploring how a single piece of contemporary slang can be given very different graphic identities.",
     descriptionFr:
-      "Pour ce projet, nous devions choisir un mot parmi deux listes : vocabulaire courant et expressions de la génération Z, puis construire une réponse visuelle autour de ce mot. J'ai choisi « slay » et l'ai développé à travers trois visuels distincts, en explorant la manière dont une même expression contemporaine peut recevoir des identités graphiques radicalement différentes. Ce projet a été réalisé avec l'aide de mes camarades Romane Barba-Lopez et Maellyne Scwan.",
+      "Pour ce projet, nous devions choisir un mot parmi deux listes : vocabulaire courant et expressions de la génération Z, puis construire une réponse visuelle autour de ce mot. J'ai choisi « slay » et l'ai développé à travers trois visuels distincts, en explorant la manière dont une même expression contemporaine peut recevoir des identités graphiques radicalement différentes.",
     images: [],
     prev: { slug: 'portofino-font', name: 'Portofino, Font', nameFr: 'Portofino, Police' },
     next: { slug: 'ia-vs-non-ia', name: 'IA vs Non IA', nameFr: 'IA vs Non IA' },
