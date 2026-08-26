@@ -369,6 +369,34 @@ export const projects: Project[] = [
       },
     ],
     prev: { slug: 'untitled-03', name: 'Business Card, CT.', nameFr: 'Carte de visite, CT.' },
+    next: { slug: 'street-fashion', name: 'Street Fashion', nameFr: 'La mode dans la rue' },
+  },
+  {
+    id: 17,
+    slug: 'street-fashion',
+    title: 'Street Fashion',
+    titleFr: 'La mode dans la rue',
+    eyebrow: 'ESAD Amiens — 2025',
+    category: 'Photography',
+    categoryFr: 'Photographie',
+    cover: 'img/street-fashion-01.jpg',
+    description:
+      "This street photography series looks at how people dress and move through the city, framing outfits and accessories in tight, off-center crops rather than full portraits. Cut just below the shoulders, each frame isolates a single detail — a bag, a fabric, a gesture — turning anonymous passersby into a study of everyday style caught mid-stride.",
+    descriptionFr:
+      "Cette série de photographie de rue s'intéresse à la manière dont les gens s'habillent et se déplacent dans la ville, cadrant vêtements et accessoires en plans serrés et décentrés plutôt qu'en portraits complets. Coupé juste sous les épaules, chaque cliché isole un détail — un sac, un tissu, un geste — faisant des passants anonymes une étude du style du quotidien saisi sur le vif.",
+    images: [
+      {
+        type: 'grid3',
+        srcs: ['img/street-fashion-02.jpg', 'img/street-fashion-03.jpg', 'img/street-fashion-04.jpg'],
+        alts: ['Street fashion — man in a dark suit carrying a folded garment, black and white', 'Street fashion — cargo trousers and an Eastpak backpack, black and white', 'Street fashion — woman carrying a Zara paper bag and a leather crossbody bag'],
+      },
+      {
+        type: 'grid3',
+        srcs: ['img/street-fashion-01.jpg', 'img/street-fashion-05.jpg', 'img/street-fashion-06.jpg'],
+        alts: ['Street fashion — olive green top, dark denim, and a green textured bag', 'Street fashion — flowing white skirt with a gold chain belt', 'Street fashion — woman carrying a bouquet of white tulips'],
+      },
+    ],
+    prev: { slug: 'darling-brand', name: 'Darling, Brand', nameFr: 'Darling, Marque' },
     next: null,
   },
 ];
