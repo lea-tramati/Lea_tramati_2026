@@ -118,9 +118,9 @@ export const projects: Project[] = [
     categoryFr: 'Design graphique',
     cover: 'img/slash-cover.jpg',
     description:
-      "This experimental poster grew out of a screen-printing workshop built around the pop icon Chappell Roan. Working as a group, we explored typography that could carry the singer's visual language — cast here as Joan of Arc — drawing in particular on Gothic blackletter forms associated with the Middle Ages to bridge a contemporary pop persona with a historical register. This project was made with the help of my classmates Romane Barba-Lopez and Maellyne Scwan.",
+      "This experimental poster grew out of a screen-printing workshop built around the pop icon Chappell Roan. Working as a group, we explored typography that could carry the singer's visual language — cast here as Joan of Arc — drawing in particular on Gothic blackletter forms associated with the Middle Ages to bridge a contemporary pop persona with a historical register. This project was made with the help of my classmates Romane Barba-Lopez and Maellyne Schwan.",
     descriptionFr:
-      "Cette affiche expérimentale est née d'un atelier de sérigraphie construit autour de l'icône pop Chappell Roan. En groupe, nous avons exploré une typographie capable de porter l'univers visuel de la chanteuse — représentée ici en Jeanne d'Arc — en nous appuyant notamment sur des lettres gothiques associées au Moyen Âge, pour faire dialoguer une figure pop contemporaine avec un registre historique. Ce projet a été réalisé avec l'aide de mes camarades Romane Barba-Lopez et Maellyne Scwan.",
+      "Cette affiche expérimentale est née d'un atelier de sérigraphie construit autour de l'icône pop Chappell Roan. En groupe, nous avons exploré une typographie capable de porter l'univers visuel de la chanteuse — représentée ici en Jeanne d'Arc — en nous appuyant notamment sur des lettres gothiques associées au Moyen Âge, pour faire dialoguer une figure pop contemporaine avec un registre historique. Ce projet a été réalisé avec l'aide de mes camarades Romane Barba-Lopez et Maellyne Schwan.",
     images: [
       { type: 'full', srcs: ['img/015.jpg'], alts: ['Slash screen-printed poster — Chappell Roan as Joan of Arc, Gothic blackletter typography'] },
     ],
