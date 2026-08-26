@@ -356,7 +356,12 @@ export const projects: Project[] = [
     descriptionFr:
       "Darling est une identité de marque fictive imaginée autour d'une gamme de thés aromatisés à base de CBD. Le projet consiste à créer un univers de marque complet à partir d'un lieu réel de la ville d'Amiens : le square Darlington.\n\nL'objectif était de transformer cette rue ou cette allée en un véritable territoire de marque, en développant une identité visuelle cohérente et déclinable sur une gamme de produits. Le nom « Darling », à la sonorité élégante et précieuse, fait directement écho à celui de la zone choisie, tout en créant un contraste avec l'image plus controversée ou intrigante généralement associée au CBD.\n\nLe packaging adopte ainsi une esthétique raffinée et élégante, pensée pour créer une rupture entre l'univers premium de la marque et l'origine plus atypique du produit. L'ensemble du système visuel cherche à trouver un équilibre entre curiosité, sophistication et cohérence, afin de permettre à l'identité de se décliner naturellement sur l'ensemble de la gamme.",
     images: [
-      { type: 'full', srcs: ['img/darling-brand-lineup.png'], alts: ['Darling tea packaging — full range of box mockups across lemon, mojito, and strawberry flavors'] },
+      {
+        type: 'grid3',
+        srcs: ['img/darling-brand-lemon.png', 'img/darling-brand-mojito.png', 'img/darling-brand-strawberry.png'],
+        alts: ['Darling tea packaging — lemon flavor box', 'Darling tea packaging — mojito flavor box', 'Darling tea packaging — strawberry flavor box'],
+        cellAspect: 'aspect-[4/5]',
+      },
       {
         type: 'grid2',
         srcs: ['img/darling-brand-box.jpg', 'img/darling-brand-teabag.jpg'],
