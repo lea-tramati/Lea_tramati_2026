@@ -413,11 +413,11 @@ export const projects: Project[] = [
     eyebrow: 'Personal Project — 2026',
     category: 'Motion Design',
     categoryFr: 'Motion Design',
-    cover: 'img/liquid-smooth-bg-poster.jpg',
+    cover: 'video/liquid-smooth-bg-poster.jpg',
     description:
-      "Liquid Smooth is a looping motion piece built around fluid, organic movement and sound. Originally created as the site's own homepage background, it now stands as a piece in its own right — best experienced with the sound on.",
+      "Liquid Smooth is a video experiment where I wanted to play with shapes, sound, and music. Built around fluid, organic movement, it was originally created as the site's own homepage background and now stands as a piece in its own right — best experienced with the sound on.",
     descriptionFr:
-      "Liquid Smooth est une pièce animée en boucle construite autour d'un mouvement fluide et organique et du son. Conçue à l'origine comme fond animé de la page d'accueil du site, elle prend ici la forme d'une pièce à part entière — à découvrir de préférence avec le son.",
+      "Liquid Smooth est une expérimentation vidéo où j'ai voulu jouer avec les formes, le son et la musique. Construite autour d'un mouvement fluide et organique, elle a d'abord servi de fond animé à la page d'accueil du site avant de prendre ici la forme d'une pièce à part entière — à découvrir de préférence avec le son.",
     images: [
       { type: 'video-full', srcs: ['video/liquid-smooth-bg.mp4'], alts: ['Liquid Smooth — looping abstract fluid motion piece'] },
     ],
