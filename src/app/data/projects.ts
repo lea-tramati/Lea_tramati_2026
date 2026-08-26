@@ -367,6 +367,7 @@ export const projects: Project[] = [
         srcs: ['img/darling-brand-box-v3.jpg', 'img/darling-brand-teabag.jpg'],
         alts: ['Darling tea packaging — open box detail showing the mojito flavor', 'Darling tea packaging — individual tea bag and flavor tag on a plate'],
       },
+      { type: 'full', srcs: ['img/darling-brand-lineup-v4.jpg'], alts: ['Darling tea packaging — full range of box mockups across lemon, mojito, and strawberry flavors'] },
     ],
     prev: { slug: 'untitled-03', name: 'Business Card, CT.', nameFr: 'Carte de visite, CT.' },
     next: { slug: 'street-fashion', name: 'Street Fashion', nameFr: 'La mode dans la rue' },
@@ -381,9 +382,9 @@ export const projects: Project[] = [
     categoryFr: 'Photographie',
     cover: 'img/street-fashion-01.jpg',
     description:
-      "This street photography series looks at how people dress and move through the city, framing outfits and accessories in tight, off-center crops rather than full portraits. Cut just below the shoulders, each frame isolates a single detail — a bag, a fabric, a gesture — turning anonymous passersby into a study of everyday style caught mid-stride.",
+      "This street photography series looks at how people dress and move through the city, framing outfits and accessories in tight, off-center crops rather than full portraits. Cut just below the shoulders, each frame isolates a single detail — a bag, a fabric, a gesture — turning anonymous passersby into a study of everyday style caught mid-stride. This was a collaborative project with Nina Aguano.",
     descriptionFr:
-      "Cette série de photographie de rue s'intéresse à la manière dont les gens s'habillent et se déplacent dans la ville, cadrant vêtements et accessoires en plans serrés et décentrés plutôt qu'en portraits complets. Coupé juste sous les épaules, chaque cliché isole un détail — un sac, un tissu, un geste — faisant des passants anonymes une étude du style du quotidien saisi sur le vif.",
+      "Cette série de photographie de rue s'intéresse à la manière dont les gens s'habillent et se déplacent dans la ville, cadrant vêtements et accessoires en plans serrés et décentrés plutôt qu'en portraits complets. Coupé juste sous les épaules, chaque cliché isole un détail — un sac, un tissu, un geste — faisant des passants anonymes une étude du style du quotidien saisi sur le vif. Ce projet a été réalisé en collaboration avec Nina Aguano.",
     images: [
       {
         type: 'grid3',
