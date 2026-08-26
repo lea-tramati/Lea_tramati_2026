@@ -340,6 +340,30 @@ export const projects: Project[] = [
       "Ce projet a été pensé comme un exercice de branding autour de cartes de visite pour mon père, avec la volonté de lui créer une identité visuelle propre, pensée pour son activité.",
     images: [],
     prev: { slug: 'untitled-02', name: 'Feed your Head', nameFr: 'Feed your Head' },
+    next: { slug: 'darling-brand', name: 'Darling, Brand', nameFr: 'Darling, Marque' },
+  },
+  {
+    id: 16,
+    slug: 'darling-brand',
+    title: 'Darling,\nBrand',
+    titleFr: 'Darling,\nMarque',
+    eyebrow: 'Personal Project — 2026',
+    category: 'Brand Design',
+    categoryFr: 'Design de marque',
+    cover: 'img/darling-brand-cover.png',
+    description:
+      "Darling is a fictional brand identity built around a range of CBD-infused flavored teas. The project imagines a full brand territory grown out of a real place in Amiens: the Darlington square.\n\nThe goal was to turn this street, or this lane, into a genuine brand territory, developing a visual identity coherent and versatile enough to extend across a full product range. The name \"Darling,\" with its elegant, precious ring, directly echoes the sound of the chosen location, while creating a contrast with the more controversial or intriguing image usually associated with CBD.\n\nThe packaging embraces a refined, elegant aesthetic, designed to create a deliberate break between the brand's premium world and the product's more unconventional origin. The whole visual system seeks a balance between curiosity, sophistication, and consistency, so the identity can extend naturally across the full range.",
+    descriptionFr:
+      "Darling est une identité de marque fictive imaginée autour d'une gamme de thés aromatisés à base de CBD. Le projet consiste à créer un univers de marque complet à partir d'un lieu réel de la ville d'Amiens : le square Darlington.\n\nL'objectif était de transformer cette rue ou cette allée en un véritable territoire de marque, en développant une identité visuelle cohérente et déclinable sur une gamme de produits. Le nom « Darling », à la sonorité élégante et précieuse, fait directement écho à celui de la zone choisie, tout en créant un contraste avec l'image plus controversée ou intrigante généralement associée au CBD.\n\nLe packaging adopte ainsi une esthétique raffinée et élégante, pensée pour créer une rupture entre l'univers premium de la marque et l'origine plus atypique du produit. L'ensemble du système visuel cherche à trouver un équilibre entre curiosité, sophistication et cohérence, afin de permettre à l'identité de se décliner naturellement sur l'ensemble de la gamme.",
+    images: [
+      { type: 'full', srcs: ['img/darling-brand-lineup.png'], alts: ['Darling tea packaging — full range of box mockups across lemon, mojito, and strawberry flavors'] },
+      {
+        type: 'grid2',
+        srcs: ['img/darling-brand-box.jpg', 'img/darling-brand-teabag.jpg'],
+        alts: ['Darling tea packaging — open box detail showing the mojito flavor', 'Darling tea packaging — individual tea bag and flavor tag on a plate'],
+      },
+    ],
+    prev: { slug: 'untitled-03', name: 'Business Card, CT.', nameFr: 'Carte de visite, CT.' },
     next: null,
   },
 ];

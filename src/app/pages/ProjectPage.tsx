@@ -217,7 +217,7 @@ export default function ProjectPage() {
             <h2 className="font-['Inter'] text-3xl text-white mb-3">{t.description}</h2>
           </div>
           <div className="md:col-span-2">
-            <p className="font-['Inter'] text-sm text-gray-300 leading-relaxed">{description}</p>
+            <p className="font-['Inter'] text-sm text-gray-300 leading-relaxed whitespace-pre-line">{description}</p>
             <div className="mt-6">
               <span className="font-['Inter'] text-[10px] tracking-[0.30em] uppercase text-white/55">
                 {category}
