@@ -395,6 +395,11 @@ export const projects: Project[] = [
         srcs: ['img/street-fashion-01.jpg', 'img/street-fashion-05.jpg', 'img/street-fashion-06.jpg'],
         alts: ['Street fashion — olive green top, dark denim, and a green textured bag', 'Street fashion — flowing white skirt with a gold chain belt', 'Street fashion — woman carrying a bouquet of white tulips'],
       },
+      {
+        type: 'grid2',
+        srcs: ['img/street-fashion-07.jpg', 'img/street-fashion-08.jpg'],
+        alts: ['Street fashion — couple walking together, one carrying a black duffel bag, black and white', 'Street fashion — studded leather harness belt over a black top, black and white'],
+      },
     ],
     prev: { slug: 'darling-brand', name: 'Darling, Brand', nameFr: 'Darling, Marque' },
     next: null,
